@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
-  Download,
-  Smartphone,
   CheckCircle,
   FileText,
   Bell,
@@ -231,52 +229,50 @@ export default function Home() {
 
       {/* ===== HOW IT WORKS ===== */}
       <ScrollReveal>
-        <section className="bg-white section-padding">
+        <section className="bg-gray-light section-padding">
           <div className="container-main">
-            <div className="text-center mb-12">
-              <RibbonBadge>Simple & Easy</RibbonBadge>
-              <h2 className="text-3xl font-bold text-dark mb-4">
+            <div className="text-center mb-16">
+              <RibbonBadge>How It Works</RibbonBadge>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark mb-4">
                 Get Started in 3 Simple Steps
               </h2>
-              <p className="text-gray-medium max-w-2xl mx-auto">
-                Managing your vehicle has never been easier
+              <p className="text-base sm:text-lg text-gray-medium max-w-2xl mx-auto leading-relaxed">
+                Managing your vehicle has never been easier. Join thousands of satisfied users in minutes.
               </p>
             </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                step: '1',
-                title: 'Download & Sign Up',
-                desc: 'Get the VAPP app from App Store or Google Play. Create your free account in seconds.',
-                icon: Download,
-              },
-              {
-                step: '2',
-                title: 'Add Your Vehicle',
-                desc: 'Enter your vehicle details and upload important documents like insurance and warranty.',
-                icon: Smartphone,
-              },
-              {
-                step: '3',
-                title: 'Start Saving Time',
-                desc: 'Book services, track maintenance, earn rewards, and never miss another service date.',
-                icon: CheckCircle,
-              },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon size={32} className="text-white" />
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+              {[
+                {
+                  step: '01',
+                  title: 'Download & Sign Up',
+                  desc: 'Get the VAPP app from App Store or Google Play. Create your free account in seconds.',
+                },
+                {
+                  step: '02',
+                  title: 'Add Your Vehicle',
+                  desc: 'Enter your vehicle details and upload important documents like insurance and warranty.',
+                },
+                {
+                  step: '03',
+                  title: 'Start Saving Time',
+                  desc: 'Book services, track maintenance, earn rewards, and never miss another service date.',
+                },
+              ].map((item) => (
+                <div key={item.step} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300 h-full">
+                  {/* Step Number Badge */}
+                  <div className="inline-flex items-center justify-center w-14 h-14 bg-primary rounded-xl mb-6">
+                    <span className="text-2xl font-bold text-white">{item.step}</span>
+                  </div>
+                  
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-dark mb-3">{item.title}</h3>
+                  <p className="text-gray-medium leading-relaxed">{item.desc}</p>
                 </div>
-                <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4 -mt-10">
-                  <span className="text-2xl font-bold text-primary">{item.step}</span>
-                </div>
-                <h3 className="text-xl font-bold text-dark mb-3">{item.title}</h3>
-                <p className="text-gray-medium leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
       </ScrollReveal>
 
       {/* ===== APP FEATURES ===== */}
@@ -327,13 +323,13 @@ export default function Home() {
             ].map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="bg-primary rounded-xl p-6 border border-primary"
+                className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300 h-full"
               >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4">
-                  <Icon size={32} className="text-white" />
+                <div className="w-12 h-12 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                  <Icon size={24} className="text-primary" />
                 </div>
-                <h3 className="text-lg text-lg font-semibold text-white mb-2">{title}</h3>
-                <p className="text-md text-white/90 leading-relaxed">
+                <h3 className="text-xl font-bold text-dark mb-3">{title}</h3>
+                <p className="text-gray-medium leading-relaxed">
                   {desc}
                 </p>
               </div>
@@ -440,13 +436,13 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-white rounded-xl p-6 border border-gray-200 text-center"
+                className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300 h-full text-center"
               >
-                <div className="w-12 h-12 bg-primary-light rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-primary-light rounded-lg flex items-center justify-center mx-auto mb-6">
                   <item.icon size={24} className="text-primary" />
                 </div>
-                <h3 className="font-bold text-dark mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-medium">{item.desc}</p>
+                <h3 className="text-xl font-bold text-dark mb-3">{item.title}</h3>
+                <p className="text-gray-medium leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

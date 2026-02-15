@@ -8,9 +8,9 @@ import {
 import DemoForm from '../components/DemoForm';
 
 const steps = [
-  { step: '01', title: 'Sign Up', desc: 'Register your service center on VAPP in minutes.' },
-  { step: '02', title: 'Set Up', desc: 'Configure services, prices, and availability.' },
-  { step: '03', title: 'Go Live', desc: 'Start receiving bookings and growing digitally.' },
+  { step: '01', title: 'Contact Us', desc: 'Reach out to VAPP and express your interest in becoming a partner service center.' },
+  { step: '02', title: 'Get Verified', desc: 'Our team will verify your service center and complete the registration internally.' },
+  { step: '03', title: 'Go Live', desc: 'Start receiving bookings from customers and grow your business digitally.' },
 ];
 
 export default function ServiceCenters() {
@@ -78,21 +78,28 @@ export default function ServiceCenters() {
 
       {/* How It Works */}
       <ScrollReveal delay={100}>
-        <section className="bg-white section-padding">
+        <section className="bg-gray-light section-padding">
         <div className="container-main">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-dark mb-4">
-              Get Started in 3 Steps
+          <div className="text-center mb-16">
+            <RibbonBadge>How It Works</RibbonBadge>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark mb-4">
+              Get Started in 3 Simple Steps
             </h2>
+            <p className="text-base sm:text-lg text-gray-medium max-w-2xl mx-auto leading-relaxed">
+              Join our network of trusted service centers and start growing your business today.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {steps.map((s) => (
-              <div key={s.step} className="text-center">
-                <div className="w-14 h-14 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-primary font-bold text-lg">{s.step}</span>
+              <div key={s.step} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300 h-full">
+                {/* Step Number Badge */}
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-primary rounded-xl mb-6">
+                  <span className="text-2xl font-bold text-white">{s.step}</span>
                 </div>
-                <h3 className="text-lg font-semibold text-dark mb-2">{s.title}</h3>
-                <p className="text-md text-gray-medium">{s.desc}</p>
+                
+                {/* Content */}
+                <h3 className="text-xl font-bold text-dark mb-3">{s.title}</h3>
+                <p className="text-gray-medium leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>

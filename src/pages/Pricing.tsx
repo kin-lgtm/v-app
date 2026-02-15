@@ -80,15 +80,15 @@ export default function Pricing() {
             {pricingConsiderations.map((item) => (
               <div
                 key={item.title}
-                className="bg-primary rounded-xl p-6 border border-primary"
+                className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300 h-full"
               >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4">
-                  <item.icon size={32} className="text-white" />
+                <div className="w-12 h-12 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                  <item.icon size={24} className="text-primary" />
                 </div>
-                <h3 className="text-lg text-lg font-semibold text-white mb-2">
+                <h3 className="text-xl font-bold text-dark mb-3">
                   {item.title}
                 </h3>
-                <p className="text-md text-white/90 leading-relaxed">
+                <p className="text-gray-medium leading-relaxed">
                   {item.description}
                 </p>
               </div>
